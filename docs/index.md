@@ -24,7 +24,7 @@ _Prefer_ the first choice. Take the second only when there is some exigent circu
 
 
 ### Assume that use cases will change in ways that cannot be predicted.
-One of the biggest time sinks is code which assumes that the only use cases that matter are the ones that have been asked for so far. A decision that appears to save ten minutes may propagate through the codebase until it takes ten weeks to fix, and that's not hyperbole. There are cases where it's _far_ worse than that. In fact, according to NIST, [bugs become exponentially more expensive to fix the further they get from your workstation](https://deepsource.io/blog/exponential-cost-of-fixing-bugs/).
+One of the biggest time sinks is code which assumes that the only use cases that matter are the ones that have been asked for so far. A decision that appears to save ten minutes may propagate through the codebase until it takes ten weeks to fix, and that's not hyperbole. There are cases where it's _far_ worse than that. In fact, according to NIST, [bugs become exponentially more expensive to fix the further they get from your workstation](https://deepsource.io/blog/exponential-cost-of-fixing-bugs/). Over-coupling your code to present use cases _is_ bug: you're eventually going to have to fix it, and it's going to take at least as much time and risk as any other kind of bug.
 
 Another thing: It's not just the time, but the _risk._ If you ship sort-of-okay code now, and then have to refactor it and ship that later, you'll be taking a risk in production _twice_ rather than once.
 
