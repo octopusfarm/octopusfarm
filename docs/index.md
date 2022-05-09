@@ -1,31 +1,30 @@
 ## The Octopus Farm
 
-> You've been hired to help an octopus farm figure out how to make its operation run more smoothly. The workers are happy and well-motivated, but they're running into certain problems that could get in the way of their plans. They want to make those problems go away, and avoid creating more of the same.
-> 
-> On your first day, you walk up to one of the tanks. You notice that it's larger than you'd like to see. On inspecting the machinery that supports the tank, it occurs to you that while it performs well today, it's going to cause problems in the near future. You make a mental note to pitch the team on moving to smaller tanks, and more of them.
-> 
-> At the moment, you've got an order to retrieve one particular octopus. Once you've found it, you study its behavior for a while, and then you reach in and try to pull it out. It seems deceptively easy, but this isn't your first rodeo. As soon as you try to extricate it, you realize that it's latched onto its friends, and they're pulling back. That's when you notice that several of them have begun to slither angrily up your arm.
-> 
-> You realize that before you can get a grip on that octopus, you have to find a way to keep its friends happy.
+> It's your first day. You walk up to one of the tanks. You need to retrieve one particular octopus. Once you've found it, you study its behavior for a while, and then you reach in and try to pull it out. It seems deceptively easy, but this isn't your first rodeo. As soon as you try to extricate it, you realize that it's latched onto its friends, and they're pulling back. That's when you notice that several of them have begun to slither angrily up your arm.
 
-This allegory should be quite familiar with anyone who has significant software development experience.
+This allegory should be quite familiar to anyone who has significant software development experience.
 
 You have an existing method or class that works alright with current use cases. However, new use cases are coming down the pike, and you know it has to change. Trouble is, as soon as you try to extract it, you discover that it's densely enmeshed with a lot of other classes and methods. It doesn't want to let go of them, and they don't want to let go of it.
 
 
 ## Improving an Octopus Farm
 
-
 ### Always be prepared to _slow down._
-You can't change your direction before you've decided to change it. You are not just working on code. You're working _within_ a complex system that _includes_ code, but also has other attributes and functions: business processes, procedures, customs, assumptions, and so on.
+You can't change course before you've decided to change course.
 
-Anyone who works in machine learning can tell you that a prediction is only as good as the model it's generated from. Each developer has mental models (beliefs) of the applications they're working on, how the team should work, what they should expect of others, what others should expect of them. These beliefs are based on imperfect information, and are thus never 100% accurate. **It must be assumed that they will have to be revised from time to time.**
+Both of these things can be true at the same time:
+- Changing course is difficult, and may annoy others.
+- Changing course is the best option, and will keep you out of a _lot_ of trouble down the road.
 
-Before I discovered TDD, one of my beliefs was that software development was necessarily difficult and hectic. Well, _that_ was wrong! Robert C. Martin has said that "the only way to go fast is to go well." I've followed this advice for years, and it hasn't failed me yet.
+In software development, you will often encounter decisions like this:
+- Add time to an existing project in order to refactor something you found while you were working on it.
+- _Don't_ refactor that now, but put it off for six months, at which point it will take ten times longer to fix than it would today.
+
+_Prefer_ the first choice. Take the second only when there is some exigent circumstance that can't be got around. If that happens a lot, you've got problems that will get progressively worse over time.
 
 
 ### Assume that use cases will change in ways that cannot be predicted.
-One of the biggest time sinks is code which assumes that the only use cases that matter are the ones that have been asked for so far. A decision that appears to save ten minutes may propagate through the codebase until it takes ten weeks to fix, and that's not hyperbole. If anything, it's _conservative._
+One of the biggest time sinks is code which assumes that the only use cases that matter are the ones that have been asked for so far. A decision that appears to save ten minutes may propagate through the codebase until it takes ten weeks to fix, and that's not hyperbole. There are cases where it's _far_ worse than that. In fact, according to NIST, [bugs become exponentially more expensive to fix the further they get from your workstation](https://deepsource.io/blog/exponential-cost-of-fixing-bugs/).
 
 Another thing: It's not just the time, but the _risk._ If you ship sort-of-okay code now, and then have to refactor it and ship that later, you'll be taking a risk in production _twice_ rather than once.
 
@@ -42,7 +41,7 @@ After all, that refactoring is a sunk cost. Why not get the maximum benefit?
 ### Rushing leads to errors, and errors lead to rushing.
 Just as adding more developers to a delayed project doesn't automatically cause it to become less delayed, a single developer rushing to meet a deadline trades some amount of time for a _lot_ of risk.
 
-If you care about how many _minutes_ are left until you're going into production, ask yourself why. Perhaps something is on fire, and it couldn't be avoided _this_ time, but when was the _last_ time you were counting down minutes? If it was five months ago, well, alright, but you should still look at the chain of events that lead up to this. On the other hand, if this happens over and over, you're going to have to do something that might seem unintuitive: _Slow down._
+If you care about how many _minutes_ are left until you're going into production, ask yourself why. Perhaps something is on fire, and it couldn't be avoided _this_ time, but when was the _last_ time you were counting down minutes? If it was five months ago, well, alright, but you should still look at the chain of events that lead up to this. On the other hand, if this happens over and over, you're going to have to do something that might seem unintuitive, as I have said above: _Slow down._
 
 You can burn a candle at both ends, but eventually the flames will meet. Try to avoid making such problems for yourself. If there is an emergency and you have to light both ends, then do so. If that happens all the time, you will eventually learn — at great expense — why it's better to avoid problems than to solve them.
 
@@ -52,17 +51,11 @@ You can burn a candle at both ends, but eventually the flames will meet. Try to 
 - Over time, that interest also accrues interest, and so on.
 - If you underestimate or ignore that interest, which is easy, it will quietly become worse at a rate that accelerates over time.
 
-Paying cash is almost always better than renting money and paying interest. You can't _always_ do that, but it should be your preference.
-
-In software development, you will often encounter decisions like this:
-- Add time to an existing project in order to refactor something you found while you were working on it.
-- _Don't_ refactor that now, but put it off for six months, at which point it will take ten times longer to fix than it would today.
-
-_Prefer_ the first choice. Take the second only when there is some exigent circumstance that can't be got around. If that happens a lot, you've got problems that will get progressively worse over time.
+Paying cash is almost always better than renting money and paying interest. You can't _always_ do that, but it should be your preference. Likewise, fixing a bug today is often better than fixing it "tomorrow."
 
 
 ### Help your manager, and yourself. Don't speak about probabilistic outcomes as though they were a certainty.
-If you've studied statistics, you might remember that if your input data is accurate to two decimal places, and your standard deviation has ten, then it must be rounded to two. That way, you don't imply that you have more accuracy than you actually do.
+If you've studied statistics, you may recall that if your input data is accurate to two decimal places, and your standard deviation has ten, then it must be rounded to two. That way, you don't imply that you have more accuracy than you actually do.
 
 Your manager's job involves making actuarial decisions in order to mitigate both cost and _risk._ (Not just time! _Risk!_ Remember that!) Actuarial decisions require evaluating statistical probabilities. Your work happens to be probabilistic. You can't say for certain that the ticket you're working on will be done in eight days, five hours, fourty-two minutes and thirty-five seconds. That's why we say _estimate_ instead of _guarantee._
 
@@ -72,7 +65,7 @@ Robert C. Martin [has this to say](http://blog.cleancoder.com/uncle-bob/2012/04/
 
 I've never given three. In most cases, I just give one: the worst-case scenario. If the project is some combination of large, complex, and impactful, I will consider giving two. For example: "I'm 80% confident that I can do this in two weeks, and 90% confident that I can do it in two and a half." Giving two data points instead of one conveys my impression of how much uncertainty I see, and prepares the listener to consider the fact that 90% is not the same as 100%. Of course, anyone is free to _demand_ 100% certainty, but I can't intervene with the laws of physics.
 
-Mark Twain guarantees two things: Death and taxes. I will go no further than him. Companies will often quote "five nines" or "six sigma." Of course, they _want_ to say 100%.
+Mark Twain guarantees two things: Death and taxes. I will go no further than him.
 
 
 ### Don't think exclusively in sprint-long increments. If the correct statement is "I need more time," then make that statement.
@@ -82,4 +75,6 @@ Some time ago, I came across the following idea:
 
 I don't know who had this idea originally, but it gets paraphrased a lot in agile blogs.
 
-If burning down points is your first concern, then burning down debt _isn't_ your first concern. You have to find the balance between committing work, and making sure that work doesn't unnecessarily cause _much more_ work in the future.
+If burning down points is your first concern, then burning down debt _isn't_ your first concern. You have to find the balance between committing work, and making sure that work doesn't unnecessarily cause _much more_ work in the future. 
+
+Agile is supposed to make software development _better,_ not worse. Don't shoot yourself in the foot just to burn down points.
