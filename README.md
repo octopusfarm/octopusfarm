@@ -3,6 +3,7 @@ Hi! I'm an octopus farmer. I keep the octopi happy by making sure they don't get
 Most of my work is in web development, but I'm not specifically a web developer. I've also written device drivers (the kind that require an oscilloscope to debug), a heuristic calibration system for linear delta robots (3D printers), and other fun stuff. I started programming on an Apple ]\[E in the '80s.
 
 Some things I like:
+- Knowing who Trygve Reenskaug is
 - Solving problems that "can't be solved" (ask me about NeoPixels)
 - Docks that don't go into conniptions or forget how my monitors are arranged every day
 - YouTubes of Robert C. Martin and anyone else wiser than me
