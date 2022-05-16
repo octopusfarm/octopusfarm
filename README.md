@@ -1,4 +1,4 @@
-Hi! I'm an octopus farmer. I keep the octopi happy by making sure they don't get all tangled up.
+Hi! I'm an octopus farmer. I keep the critters happy by making sure they don't get all tangled up.
 
 Most of my work is in web development, but I'm not specifically a web developer. I've also written device drivers (the kind that require an oscilloscope to debug), a heuristic calibration system for linear delta robots (3D printers), and other fun stuff. I started programming on an Apple ]\[E in the '80s.
 
